@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""number route module"""
-
+"""
+imports
+"""
 from flask import Flask, render_template
 
-
 app = Flask(__name__)
+"""
+Routes
+"""
 
-"""routes"""
+
 @app.route("/", strict_slashes=False)
 def hello_world():
     return "Hello HBNB!"
