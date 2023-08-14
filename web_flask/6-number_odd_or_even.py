@@ -56,7 +56,11 @@ def number_template(n):
 
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def odd_or_even_template(n):
-    return render_template('6-number_odd_or_even.html', n=n)
+    if n % 2 == 0:
+        result = "is even"
+    else:
+        result = "is odd"
+    return render_template('6-number_odd_or_even.html', n=n, result=result)
 
 """host and port that the web app is listening"""
 
