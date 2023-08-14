@@ -50,7 +50,7 @@ def number(n):
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def number_template(n):
-    return render_template('templates/5-number.html', n=n)
+    return render_template('5-number.html', n=n)
 
 """host and port that the web app is listening"""
 
