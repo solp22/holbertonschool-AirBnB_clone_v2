@@ -1,34 +1,51 @@
 #!/usr/bin/python3
-"""python route module"""
-
+"""
+imports
+"""
 from flask import Flask
 
 
 app = Flask(__name__)
+"""
+Routes
+"""
 
-"""routes"""
+
 @app.route("/", strict_slashes=False)
-def hello_world():
-    return "Hello HBNB!"
+def index():
+    return ("Hello HBNB!")
 
-"""hbnb"""
+
+"""
+HBNB
+"""
+
+
 @app.route("/hbnb", strict_slashes=False)
-def hello_world():
-    return "HBNB"
+def HBNB():
+    return ("HBNB")
 
-"""c"""
+
+"""
+C is fun
+"""
+
+
 @app.route("/c/<text>", strict_slashes=False)
-def c_text(text):
-    new = text.replace("_", " ")
-    return f"C {new}"
+def C(text):
+    newtext = text.replace("_", " ")
+    return (f"C {newtext}")
 
-"""python"""
-@app.route("/python/", defaults={"text": "is_cool"}, strict_slashes=False)
+
+@app.route("/python/", defaults={"text": "is cool"}, strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def python_text(text):
-    new = text.replace("_", " ")
-    return f"Python {new}"
+def Python(text):
+    text = text.replace("_", " ")
+    return (f"Python {text}")
 
-"""host and port that the web app is listening"""
+
+"""
+Define the host and port that the web app is listening
+"""
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port="5000", debug=True)
