@@ -15,6 +15,7 @@ routes
 def hello_world():
     return "Hello HBNB!"
 
+
 """
 hbnb
 """
@@ -23,6 +24,7 @@ hbnb
 @app.route("/hbnb", strict_slashes=False)
 def hello_world():
     return "HBNB"
+
 
 """
 c
@@ -33,6 +35,7 @@ c
 def c_text(text):
     new = text.replace("_", " ")
     return f"C {new}" 
+
 
 """
 host and port that the web app is listening
