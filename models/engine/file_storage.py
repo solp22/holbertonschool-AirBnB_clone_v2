@@ -13,7 +13,7 @@ class FileStorage:
         if cls is None:
             return FileStorage.__objects
         return {key: value for key, value
-                in FileStorage.__objects.items() if isinstance(value, eval(cls))}
+                in FileStorage.__objects.items() if isinstance(value, cls)}
 
     def delete(self, obj=None):
         """Delete obj from __objects dict"""
