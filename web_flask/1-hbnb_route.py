@@ -1,18 +1,33 @@
 #!/usr/bin/python3
-"""1-hello_route module"""
-
+"""
+imports
+"""
 from flask import Flask
 
+
 app = Flask(__name__)
+"""
+Routes
+"""
 
 
 @app.route("/", strict_slashes=False)
-def hello_world():
-    return "Hello HBNB!"
+def index():
+    return ("Hello HBNB!")
+
+
+"""
+HBNB
+"""
+
 
 @app.route("/hbnb", strict_slashes=False)
-def hello_world():
-    return "HBNB"
+def HBNB():
+    return ("HBNB")
 
+
+"""
+Define the host and port that the web app is listening
+"""
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port="5000", debug=True)
