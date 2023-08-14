@@ -11,7 +11,7 @@ Routes
 
 
 @app.route("/", strict_slashes=False)
-def hello_world():
+def index():
     return "Hello HBNB!"
 
 """hbnb"""
