@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ State Module for HBNB project """
 from models.base_model import BaseModel, Base
+
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 from os import getenv
@@ -19,8 +20,9 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """Getter"""
+            from models import storage
             all_cities = []
-            for key, value in self.all().items():
+            for key, value in storage._FileStorage__objects.items():
                 key = key.split(".")
                 if key == 'City' and value.state_id == self.id:
                     all_cities.append(value)
