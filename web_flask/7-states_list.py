@@ -66,7 +66,7 @@ def odd_or_even_template(n):
 
 
 @app.teardown_appcontext
-def close():
+def close(exception):
     storage.close()
 
 
