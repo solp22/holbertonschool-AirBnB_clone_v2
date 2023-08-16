@@ -3,6 +3,7 @@
 
 from flask import Flask, render_template
 from models import storage
+from models.state import State
 
 
 app = Flask(__name__)
@@ -72,7 +73,7 @@ def close():
 @app.route("/states_list", strict_slashes=False)
 def states_list():
     return render_template('7-states_list.html',
-                           states=storage.all("State").values())
+                           states=storage.all(State).values())
 
 
 """host and port that the web app is listening"""
