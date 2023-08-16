@@ -50,6 +50,7 @@ class FileStorage:
             'State': State, 'City': City, 'Amenity': Amenity,
             'Review': Review
         }
+
     def reload(self):
         """ Deserializes the JSON file to __objects """
         if exists(self.__file_path):
