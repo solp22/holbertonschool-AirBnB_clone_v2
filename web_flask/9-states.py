@@ -84,7 +84,7 @@ def cities_by_states():
 
 
 @app.route("/states/<id>", strict_slashes=False)
-def states(state_id):
+def state_by_id(state_id):
     return render_template('9-states.html',
                            states=storage.all(State).values(), id=state_id)
 
